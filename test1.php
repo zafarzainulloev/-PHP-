@@ -22,9 +22,9 @@ while(!feof($fd))
     $str = htmlentities(fgets($fd));
            $pieces = explode(" ", $str);
                  if ($action1=="-") $str_a = (int)$pieces[0]-(int)$pieces[1];
-                 if ($action1=="+") $str_a = (int)$pieces[0]-(int)$pieces[1];
-                 if ($action1=="*") $str_a = (int)$pieces[0]-(int)$pieces[1];
-                 if ($action1=="/") $str_a = (int)$pieces[0]-(int)$pieces[1];
+                 if ($action1=="+") $str_a = (int)$pieces[0]+(int)$pieces[1];
+                 if ($action1=="*") $str_a = (int)$pieces[0]*(int)$pieces[1];
+                 if ($action1=="/") $str_a = (int)$pieces[0]/(int)$pieces[1];
                  if ($str_a<0) fwrite($fpn, $str_a."\r\n");
                  if ($str_a>=0) fwrite($fpp, $str_a."\r\n");         
 }
